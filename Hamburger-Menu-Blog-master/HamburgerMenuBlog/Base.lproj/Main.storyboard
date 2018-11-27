@@ -122,6 +122,9 @@
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
                                         <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="0la-Ej-cN8" appends="YES" id="9HA-bB-XPG"/>
+                                        </connections>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZJ-BO-KJS">
                                         <rect key="frame" x="0.0" y="447" width="375" height="128"/>
@@ -172,9 +175,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="grD-yv-bER">
                     <connections>
-                        <segue destination="L0K-bk-Eti" kind="popoverPresentation" popoverAnchorView="H5d-Mt-LFp" id="1vf-h2-c74">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="L0K-bk-Eti" kind="presentation" id="cTi-FE-pKa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="0la-Ej-cN8">
+                    <connections>
+                        <segue destination="dEh-Cg-AvO" kind="presentation" id="yZ4-rT-b79"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -302,11 +308,11 @@
                             <constraint firstAttribute="trailing" secondItem="tyH-f1-NyQ" secondAttribute="trailing" id="wGY-TM-ZgK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8MC-Yl-HAw">
-                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="sjg-DE-ulf">
+                    <navigationItem key="navigationItem" id="1Qb-JM-9x3">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="dy7-UQ-0BN">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="hamburgerBtnTapped:" destination="aNX-KL-9CZ" id="Hky-FP-e1L"/>
+                                <action selector="hamburgerBtnTapped:" destination="aNX-KL-9CZ" id="5e5-cT-QAs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -334,26 +340,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY6-k0-T2h">
-                                <rect key="frame" x="16" y="28" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                </accessibility>
-                                <state key="normal" image="exit"/>
-                                <connections>
-                                    <action selector="exitPopUpClicked:" destination="L0K-bk-Eti" eventType="touchUpInside" id="bRw-jZ-TlM"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62B-nr-PIo">
-                                <rect key="frame" x="166" y="121" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4l0-en-8HZ">
-                                <rect key="frame" x="129" y="36" width="116" height="77"/>
+                                <rect key="frame" x="169" y="138" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -420,9 +408,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4l0-en-8HZ">
+                                <rect key="frame" x="129" y="53" width="116" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.28235294117647058" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jSg-7H-2fb">
+                        <barButtonItem key="leftBarButtonItem" image="exit" id="scr-Ah-lhm">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="hamburgerBtnTapped:" destination="aNX-KL-9CZ" id="S7B-sC-I0i"/>
+                                <segue destination="aNX-KL-9CZ" kind="show" id="bII-q8-VQA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateField" destination="hZf-6Y-SHz" id="7g0-U2-VIz"/>
                         <outlet property="descriptionField" destination="wh2-wr-44T" id="iOp-93-CDs"/>
@@ -436,7 +440,7 @@
         <!--Pop Up Controller-->
         <scene sceneID="yfG-zW-IxC">
             <objects>
-                <viewController id="L0K-bk-Eti" customClass="PopUpController" customModule="HamburgerMenuBlog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="L0K-bk-Eti" customClass="PopUpController" customModule="HamburgerMenuBlog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5nt-rm-2CD"/>
                         <viewControllerLayoutGuide type="bottom" id="JGb-yU-GYb"/>
@@ -445,9 +449,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FET-3f-4Sv">
-                                <rect key="frame" x="44" y="237" width="286" height="213"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FET-3f-4Sv">
+                                <rect key="frame" x="44.5" y="227" width="286" height="213"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOL-77-cyt">
                                         <rect key="frame" x="141" y="17" width="81" height="21"/>
@@ -494,9 +497,17 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="BG3-LA-diw"/>
+                                    <constraint firstAttribute="width" constant="286" id="Tdj-b5-e2J"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FET-3f-4Sv" firstAttribute="centerX" secondItem="0MW-WP-6sE" secondAttribute="centerX" id="ULW-Ma-7qz"/>
+                            <constraint firstItem="FET-3f-4Sv" firstAttribute="centerY" secondItem="0MW-WP-6sE" secondAttribute="centerY" id="wfu-98-voA"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -506,20 +517,114 @@
                         <outlet property="eventTitle" destination="fOL-77-cyt" id="uik-Rb-8yY"/>
                         <outlet property="exitButton" destination="Wf6-T2-Wda" id="s7B-UB-EN3"/>
                         <outlet property="personPic" destination="Pse-xi-brO" id="icd-IC-MEA"/>
+                        <outlet property="popUpView" destination="FET-3f-4Sv" id="c1e-xM-dIQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9H-NX-Tsy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.8" y="131.78410794602701"/>
+            <point key="canvasLocation" x="2001" y="132"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Pop Up Controller-->
+        <scene sceneID="QmT-hp-C1I">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="dEh-Cg-AvO" customClass="PopUpController" customModule="HamburgerMenuBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oQz-PY-ffS"/>
+                        <viewControllerLayoutGuide type="bottom" id="YwS-vd-Fex"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EG1-XP-0un">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRC-gu-0uJ">
+                                <rect key="frame" x="44.5" y="227" width="286" height="213"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp4-1x-d6S">
+                                        <rect key="frame" x="141" y="17" width="81" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fl3-fw-ca4">
+                                        <rect key="frame" x="209" y="56" width="0.0" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1n-Dq-POs">
+                                        <rect key="frame" x="141" y="45" width="38" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="image" image="Bryce" translatesAutoresizingMaskIntoConstraints="NO" id="SYX-Bm-muw">
+                                        <rect key="frame" x="27" y="15" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-aF-tR7">
+                                        <rect key="frame" x="187" y="45" width="66" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-rL-zVT">
+                                        <rect key="frame" x="253" y="8" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                        </accessibility>
+                                        <state key="normal" image="exit"/>
+                                        <connections>
+                                            <action selector="exitPopUpClicked:" destination="dEh-Cg-AvO" eventType="touchUpInside" id="NfW-yl-iOW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="JEP-OP-Zx5"/>
+                                    <constraint firstAttribute="width" constant="286" id="MZ8-aM-o88"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gRC-gu-0uJ" firstAttribute="centerX" secondItem="EG1-XP-0un" secondAttribute="centerX" id="vSw-cM-6Gp"/>
+                            <constraint firstItem="gRC-gu-0uJ" firstAttribute="centerY" secondItem="EG1-XP-0un" secondAttribute="centerY" id="vsE-zL-V8Y"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="eventLocation" destination="3fY-aF-tR7" id="ueJ-WY-NPI"/>
+                        <outlet property="eventTime" destination="c1n-Dq-POs" id="FOg-ui-udA"/>
+                        <outlet property="eventTitle" destination="qp4-1x-d6S" id="Rk9-dv-MdH"/>
+                        <outlet property="exitButton" destination="5mL-rL-zVT" id="ToB-Xk-FcP"/>
+                        <outlet property="personPic" destination="SYX-Bm-muw" id="Bz4-3Y-n9c"/>
+                        <outlet property="popUpView" destination="gRC-gu-0uJ" id="Dcq-tp-WrS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AR1-FQ-gbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2785" y="132"/>
+        </scene>
+        <!--Back Nav Controller-->
         <scene sceneID="J3Z-T1-8Gg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LfK-QP-Yl6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LfK-QP-Yl6" customClass="BackNavController" customModule="HamburgerMenuBlog" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CSX-be-or6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -537,6 +642,7 @@
         <image name="hamburger" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="bII-q8-VQA"/>
         <segue reference="mIF-yx-QtN"/>
     </inferredMetricsTieBreakers>
 </document>

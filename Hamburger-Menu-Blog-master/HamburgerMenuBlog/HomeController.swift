@@ -19,6 +19,7 @@ class HomeController: UIViewController {
         
         profilePic.layer.cornerRadius = 45;
         profilePic.layer.masksToBounds = true;
+
     }
     
     @IBAction func hamburgerBtnTapped(_ sender: Any) {

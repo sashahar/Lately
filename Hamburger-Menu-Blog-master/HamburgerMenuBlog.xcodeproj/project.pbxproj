@@ -12,6 +12,7 @@
 		454751C81F19856F002AC524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454751C71F19856F002AC524 /* Assets.xcassets */; };
 		454751CB1F19856F002AC524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454751C91F19856F002AC524 /* LaunchScreen.storyboard */; };
 		5A40EC0A21AB579900F81777 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EC0921AB579900F81777 /* Event.swift */; };
+		5A648DE821ACCAF8001EA35C /* BackNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A648DE721ACCAF8001EA35C /* BackNavController.swift */; };
 		5A85FAB521AA7C0800CA6984 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85FAB421AA7C0800CA6984 /* PopUpController.swift */; };
 		5AF2731521ABB2C000CF9D0F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2731421ABB2C000CF9D0F /* HomeController.swift */; };
 		5AF2731721ABB2E500CF9D0F /* ChallengesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */; };
@@ -26,6 +27,7 @@
 		454751CA1F19856F002AC524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		454751CC1F19856F002AC524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A40EC0921AB579900F81777 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		5A648DE721ACCAF8001EA35C /* BackNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackNavController.swift; sourceTree = "<group>"; };
 		5A85FAB421AA7C0800CA6984 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		5AF2731421ABB2C000CF9D0F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				454751C01F19856F002AC524 /* AppDelegate.swift */,
 				5AF2731421ABB2C000CF9D0F /* HomeController.swift */,
 				454751C41F19856F002AC524 /* Main.storyboard */,
+				5A648DE721ACCAF8001EA35C /* BackNavController.swift */,
 				5AF2731821ABBAC700CF9D0F /* CreateChallengesController.swift */,
 				5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */,
 				5A40EC0921AB579900F81777 /* Event.swift */,
@@ -156,6 +159,7 @@
 				5AF2731721ABB2E500CF9D0F /* ChallengesController.swift in Sources */,
 				454751C11F19856F002AC524 /* AppDelegate.swift in Sources */,
 				5AF2731521ABB2C000CF9D0F /* HomeController.swift in Sources */,
+				5A648DE821ACCAF8001EA35C /* BackNavController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

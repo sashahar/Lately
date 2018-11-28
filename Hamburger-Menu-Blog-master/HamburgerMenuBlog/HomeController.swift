@@ -23,8 +23,8 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        header.layer.shadowOffset = .zero
-        header.layer.shadowOpacity = 1.0
+        header.layer.shadowOffset = CGSize(width: 0, height: 5)
+        header.layer.shadowOpacity = 0.5
         header.layer.shadowRadius = 10
         header.layer.shadowColor = UIColor.black.cgColor
         header.layer.masksToBounds = false
@@ -44,6 +44,7 @@ class HomeController: UIViewController {
         event2.layer.masksToBounds = true
         
         dataSource = Datasource()
+        
         collectionView.dataSource = dataSource
         collectionView.reloadData()
     }

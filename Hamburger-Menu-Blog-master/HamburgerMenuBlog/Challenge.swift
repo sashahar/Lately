@@ -10,17 +10,24 @@ import UIKit
 
 class Challenge: NSObject {
     
-    var objectID: String!
     var title: String!
     var challengeDescription: String!
+    var createDate: String!
+    var endDate: String!
+    var daysLeft: NSNumber?
     var reward: UIImage!
     
-    init(objectID: String!, title: String!, challengeDescription: String!, reward: UIImage!) {
-        self.objectID = objectID
+    init(title: String!, challengeDescription: String!, createDate: String!, endDate: String!, reward: UIImage!) {
         self.title = title
         self.challengeDescription = challengeDescription
+        self.createDate = createDate
+        self.endDate = endDate
         self.reward = reward
     }
     
+    func getDaysLeft() -> String {
+        
+        return ""
+    }
 }
 

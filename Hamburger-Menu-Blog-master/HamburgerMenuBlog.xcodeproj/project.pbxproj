@@ -16,6 +16,8 @@
 		5A7560A121AD20D100F859C5 /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560A021AD20D100F859C5 /* Datasource.swift */; };
 		5A7560A321AD230600F859C5 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560A221AD230600F859C5 /* ImageCollectionViewCell.swift */; };
 		5A7560A721AE21A800F859C5 /* ChallengeDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560A621AE21A800F859C5 /* ChallengeDetailedController.swift */; };
+		5A7560A921AE38F600F859C5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560A821AE38F600F859C5 /* Event.swift */; };
+		5A7560AB21AE390200F859C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560AA21AE390200F859C5 /* User.swift */; };
 		5A85FAB521AA7C0800CA6984 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85FAB421AA7C0800CA6984 /* PopUpController.swift */; };
 		5AF2731521ABB2C000CF9D0F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2731421ABB2C000CF9D0F /* HomeController.swift */; };
 		5AF2731721ABB2E500CF9D0F /* ChallengesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */; };
@@ -34,6 +36,8 @@
 		5A7560A021AD20D100F859C5 /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
 		5A7560A221AD230600F859C5 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5A7560A621AE21A800F859C5 /* ChallengeDetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailedController.swift; sourceTree = "<group>"; };
+		5A7560A821AE38F600F859C5 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		5A7560AA21AE390200F859C5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A85FAB421AA7C0800CA6984 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		5AF2731421ABB2C000CF9D0F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				454751C01F19856F002AC524 /* AppDelegate.swift */,
 				5AF2731421ABB2C000CF9D0F /* HomeController.swift */,
 				454751C41F19856F002AC524 /* Main.storyboard */,
+				5A7560A821AE38F600F859C5 /* Event.swift */,
+				5A7560AA21AE390200F859C5 /* User.swift */,
 				5A648DE721ACCAF8001EA35C /* BackNavController.swift */,
 				5A75609E21AD1E8300F859C5 /* Challenge.swift */,
 				5A7560A021AD20D100F859C5 /* Datasource.swift */,
@@ -163,12 +169,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF2731921ABBAC700CF9D0F /* CreateChallengesController.swift in Sources */,
+				5A7560A921AE38F600F859C5 /* Event.swift in Sources */,
 				5A7560A721AE21A800F859C5 /* ChallengeDetailedController.swift in Sources */,
 				5A85FAB521AA7C0800CA6984 /* PopUpController.swift in Sources */,
 				5A7560A121AD20D100F859C5 /* Datasource.swift in Sources */,
 				5AF2731721ABB2E500CF9D0F /* ChallengesController.swift in Sources */,
 				454751C11F19856F002AC524 /* AppDelegate.swift in Sources */,
 				5A7560A321AD230600F859C5 /* ImageCollectionViewCell.swift in Sources */,
+				5A7560AB21AE390200F859C5 /* User.swift in Sources */,
 				5A75609F21AD1E8300F859C5 /* Challenge.swift in Sources */,
 				5AF2731521ABB2C000CF9D0F /* HomeController.swift in Sources */,
 				5A648DE821ACCAF8001EA35C /* BackNavController.swift in Sources */,

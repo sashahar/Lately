@@ -8,6 +8,8 @@ class CreateChallengesController: UIViewController {
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var dateField: UITextField!
     
+    @IBOutlet weak var createChallenge: UIButton!
+    
     let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
@@ -22,6 +24,10 @@ class CreateChallengesController: UIViewController {
         toolbar.setItems([doneButton], animated: true)
         
         dateField.inputAccessoryView = toolbar
+    }
+    
+    @IBAction func createClicked(_ sender: Any) {
+        
     }
     
     @objc func doneClicked() {

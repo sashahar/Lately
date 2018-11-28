@@ -12,7 +12,6 @@ class CreateChallengesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         datePicker.datePickerMode = .date
         dateField.inputView = datePicker
         

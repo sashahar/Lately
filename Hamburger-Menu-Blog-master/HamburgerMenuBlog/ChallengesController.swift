@@ -12,6 +12,12 @@ class ChallengesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "AppIcon")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
         createButton.layer.cornerRadius = 15
         createButton.layer.shadowColor = UIColor.black.cgColor
         createButton.layer.shadowOffset = CGSize(width: 5, height: 5)

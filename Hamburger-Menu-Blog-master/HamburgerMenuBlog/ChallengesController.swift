@@ -9,6 +9,7 @@ class ChallengesController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     
     @IBOutlet weak var header: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var hamburgerMenuIsVisible = false
     var data: Datasource!
@@ -17,7 +18,13 @@ class ChallengesController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        data = Datasource();
+        if data == nil {
+            data = Datasource();
+        }
+        
+        if createdChallenge != nil {
+            data.addChallenge(challenge: createdChallenge)
+        }
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
         imageView.contentMode = .scaleAspectFit
@@ -37,11 +44,29 @@ class ChallengesController: UIViewController {
         createButton.layer.shadowRadius = 5
         createButton.layer.shadowOpacity = 0.5
         createButton.layer.masksToBounds = false
+        
+        collectionView.dataSource = data
+        collectionView.reloadData()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //collectionView.deselectItem(at: indexPath, animated: true)
+        let selectedChallenge = data.challengeAtIndexPath(indexPath)
+        performSegue(withIdentifier: "selectChallenge", sender: selectedChallenge)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = segue.destination as? HomeController {
-            destinationViewController.createdChallenge = createdChallenge
+        if segue.identifier == "selectChallenge" {
+            if let selectedChallenge = sender as? Challenge, let destinationViewController = segue.destination as? ChallengeDetailedController {
+                destinationViewController.selectedChallenge = selectedChallenge
+                print(selectedChallenge)
+            }
+        }
+        
+        if segue.identifier == "goHome" {
+            if let destinationViewController = segue.destination as? HomeController {
+                destinationViewController.createdChallenge = createdChallenge
+            }
         }
     }
     
@@ -60,8 +85,7 @@ class ChallengesController: UIViewController {
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
-        }) { (animationComplete) in
-        }
+        })
     }
 }
 

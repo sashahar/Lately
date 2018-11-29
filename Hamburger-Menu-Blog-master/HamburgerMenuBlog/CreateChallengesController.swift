@@ -10,6 +10,11 @@ class CreateChallengesController: UIViewController {
     
     @IBOutlet weak var createChallenge: UIButton!
     
+    @IBOutlet weak var cakeReward: UIButton!
+    @IBOutlet weak var coffeeReward: UIButton!
+    @IBOutlet weak var giftReward: UIButton!
+    @IBOutlet weak var iceCreamReward: UIButton!
+    
     var rewardImage:  UIImage!
     
     let datePicker = UIDatePicker()
@@ -38,6 +43,75 @@ class CreateChallengesController: UIViewController {
         createChallenge.layer.shadowRadius = 5
         createChallenge.layer.shadowOpacity = 0.5
         createChallenge.layer.masksToBounds = false
+        
+        cakeReward.layer.cornerRadius = 0.5 * cakeReward.bounds.size.width
+        cakeReward.clipsToBounds = true
+        cakeReward.layer.borderWidth = 2
+        cakeReward.layer.borderColor = UIColor.black.cgColor
+        cakeReward.layer.shadowColor = UIColor.black.cgColor
+        cakeReward.layer.shadowOffset = CGSize(width: 2, height: 2)
+        cakeReward.layer.shadowRadius = 5
+        cakeReward.layer.shadowOpacity = 0.5
+        cakeReward.layer.masksToBounds = false
+        
+        coffeeReward.layer.cornerRadius = 0.5 * cakeReward.bounds.size.width
+        coffeeReward.layer.borderWidth = 2
+        coffeeReward.layer.borderColor = UIColor.black.cgColor
+        coffeeReward.layer.shadowColor = UIColor.black.cgColor
+        coffeeReward.layer.shadowOffset = CGSize(width: 2, height: 2)
+        coffeeReward.layer.shadowRadius = 5
+        coffeeReward.layer.shadowOpacity = 0.5
+        coffeeReward.layer.masksToBounds = false
+        
+        giftReward.layer.cornerRadius = 0.5 * cakeReward.bounds.size.width
+        giftReward.layer.borderWidth = 2
+        giftReward.layer.borderColor = UIColor.black.cgColor
+        giftReward.layer.shadowColor = UIColor.black.cgColor
+        giftReward.layer.shadowOffset = CGSize(width: 2, height: 2)
+        giftReward.layer.shadowRadius = 5
+        giftReward.layer.shadowOpacity = 0.5
+        giftReward.layer.masksToBounds = false
+        
+        iceCreamReward.layer.cornerRadius = 0.5 * cakeReward.bounds.size.width
+        iceCreamReward.layer.borderWidth = 2
+        iceCreamReward.layer.borderColor = UIColor.black.cgColor
+        iceCreamReward.layer.shadowColor = UIColor.black.cgColor
+        iceCreamReward.layer.shadowOffset = CGSize(width: 2, height: 2)
+        iceCreamReward.layer.shadowRadius = 5
+        iceCreamReward.layer.shadowOpacity = 0.5
+        iceCreamReward.layer.masksToBounds = false
+    }
+    
+    @IBAction func cakeClicked(_ sender: Any) {
+        rewardImage = UIImage(named: "cake")!
+        coffeeReward.layer.borderColor = UIColor.black.cgColor
+        giftReward.layer.borderColor = UIColor.black.cgColor
+        iceCreamReward.layer.borderColor = UIColor.black.cgColor
+        cakeReward.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    @IBAction func coffeeClicked(_ sender: Any) {
+        rewardImage = UIImage(named: "coffee")!
+        cakeReward.layer.borderColor = UIColor.black.cgColor
+        giftReward.layer.borderColor = UIColor.black.cgColor
+        iceCreamReward.layer.borderColor = UIColor.black.cgColor
+        coffeeReward.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    @IBAction func giftClicked(_ sender: Any) {
+        rewardImage = UIImage(named: "gift")!
+        cakeReward.layer.borderColor = UIColor.black.cgColor
+        coffeeReward.layer.borderColor = UIColor.black.cgColor
+        iceCreamReward.layer.borderColor = UIColor.black.cgColor
+        giftReward.layer.borderColor = UIColor.red.cgColor
+    }
+    
+    @IBAction func icecreamClicked(_ sender: Any) {
+        rewardImage = UIImage(named: "icecream")!
+        cakeReward.layer.borderColor = UIColor.black.cgColor
+        coffeeReward.layer.borderColor = UIColor.black.cgColor
+        giftReward.layer.borderColor = UIColor.black.cgColor
+        iceCreamReward.layer.borderColor = UIColor.red.cgColor
     }
     
     @IBAction func createClicked(_ sender: Any) {

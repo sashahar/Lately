@@ -19,12 +19,14 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
     @IBOutlet weak var event1TimeUntil: UILabel!
     @IBOutlet weak var event1Time: UILabel!
     @IBOutlet weak var event1Reminder: UIButton!
+    @IBOutlet weak var event1ReminderUnset: UIButton!
     
     @IBOutlet weak var event2: UIView!
     @IBOutlet weak var event2Title: UILabel!
     @IBOutlet weak var event2TimeUntil: UILabel!
     @IBOutlet weak var event2Time: UILabel!
     @IBOutlet weak var event2Reminder: UIButton!
+    @IBOutlet weak var event2ReminderUnset: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -85,14 +87,18 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         
         if(eventSource1.reminder) {
             event1Reminder.isHidden = false
+            event1ReminderUnset.isHidden = true
         } else {
             event1Reminder.isHidden = true
+            event1ReminderUnset.isHidden = false
         }
         
         if(eventSource2.reminder) {
             event2Reminder.isHidden = false
+            event2ReminderUnset.isHidden = true
         } else {
             event2Reminder.isHidden = true
+            event2ReminderUnset.isHidden = false
         }
         
         event2.layer.shadowOffset = CGSize(width: 1, height: 2)
@@ -121,18 +127,48 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         if !eventSource1.reminder {
             eventSource1.reminder = true
             event1Reminder.isHidden = false
+            event1ReminderUnset.isHidden = true
         } else {
             eventSource1.reminder = false
             event1Reminder.isHidden = true
+            event1ReminderUnset.isHidden = false
         }
     }
     
+    @IBAction func unsetReminder1Clicked(_ sender: Any) {
+        if !eventSource1.reminder {
+            eventSource1.reminder = true
+            event1Reminder.isHidden = false
+            event1ReminderUnset.isHidden = true
+        } else {
+            eventSource1.reminder = false
+            event1Reminder.isHidden = true
+            event1ReminderUnset.isHidden = false
+        }
+    }
     @IBAction func event2ButtonClicked(_ sender: Any) {
         if !eventSource2.reminder {
             eventSource2.reminder = true
+            event2Reminder.isHidden = false
+            event2ReminderUnset.isHidden = true
         } else {
             eventSource2.reminder = false
+            event2Reminder.isHidden = true
+            event2ReminderUnset.isHidden = false
         }
+    }
+    
+    @IBAction func unsetReminder2Clicked(_ sender: Any) {
+        if !eventSource2.reminder {
+            eventSource2.reminder = true
+            event2Reminder.isHidden = false
+            event2ReminderUnset.isHidden = true
+        } else {
+            eventSource2.reminder = false
+            event2Reminder.isHidden = true
+            event2ReminderUnset.isHidden = false
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -193,16 +229,20 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
             eventSource1.reminder = event.reminder
             if eventSource1.reminder {
                 event1Reminder.isHidden = false
+                event1ReminderUnset.isHidden = true
             } else {
                 event1Reminder.isHidden = true
+                event1ReminderUnset.isHidden = false
             }
         }
         if(event.objectID == 2) {
             eventSource2.reminder = event.reminder
             if eventSource2.reminder {
                event2Reminder.isHidden = false
+                event2ReminderUnset.isHidden = true
             } else {
                 event2Reminder.isHidden = true
+                event2ReminderUnset.isHidden = false
             }
         }
     }

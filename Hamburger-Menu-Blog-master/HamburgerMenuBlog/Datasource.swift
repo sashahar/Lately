@@ -18,8 +18,8 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         
         let currentDate = NSDate()
         
-        events = [Event(objectID: 1, title: "Meeting with CS 147 Group", time: "Today @ 11:15 AM", timeUntil: "1.5 hours", location: "@ Huang Basement", reminder: true, personPic: UIImage(named: "Sasha")!),
-                  Event(objectID: 2, title: "Lunch with Sasha", time: "Today @ 1:30 PM", timeUntil: "3 hours", location: "@ Coupa Green", reminder: false, personPic: UIImage(named: "Sasha")!)
+        events = [Event(objectID: 1, title: "Meeting with CS 147 Group", time: "Today @ 11:15 AM", timeUntil: "1.5 hours", location: "@ Huang Basement", reminder: true, personPic: UIImage(named: "Sasha")!, locationPic: UIImage(named: "Huang")!),
+                  Event(objectID: 2, title: "Lunch with Sasha", time: "Today @ 1:30 PM", timeUntil: "3 hours", location: "@ Coupa Green", reminder: false, personPic: UIImage(named: "Sasha")!, locationPic: UIImage(named: "CoupaGreen")!)
         ]
         
         let dateFormatter = DateFormatter()

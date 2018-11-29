@@ -8,29 +8,18 @@
 
 import UIKit
 
-class Datasource: NSObject, UICollectionViewDataSource {
+class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    private var users: [User] = []
     private var challenges: [Challenge] = []
     private var events: [Event] = []
     
     override init() {
         super.init()
         
-        users = [User(name: "Bryce", profilePic: UIImage(named: "Bryce"), location: "Frisco, TX", streak: 5.0),
-                 User(name: "Sasha", profilePic: UIImage(named: "Sasha"), location: "Palo Alto, CA", streak: 2.0),
-        ]
-        
-        users[0].addFriend(friend: users[1])
-        users[1].addFriend(friend: users[0])
-        
         let currentDate = NSDate()
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ss"
-        let eventTime = timeFormatter.string(from: currentDate as Date)
         
-        events = [Event(title: "CS 147", eventDescription: "Meeting", time: eventTime, location: "Hewelett 201", people: users),
-                  Event(title: "Lunch", eventDescription: "with Sasha", time: eventTime, location: "Coupa Green", people: users)
+        events = [Event(objectID: 1, title: "Meeting with CS 147 Group", time: "Today @ 11:15 AM", timeUntil: "1.5 hours", location: "@ Huang Basement", reminder: true, personPic: UIImage(named: "Sasha")!),
+                  Event(objectID: 2, title: "Lunch with Sasha", time: "Today @ 1:30 PM", timeUntil: "3 hours", location: "@ Coupa Green", reminder: false, personPic: UIImage(named: "Sasha")!)
         ]
         
         let dateFormatter = DateFormatter()
@@ -50,10 +39,22 @@ class Datasource: NSObject, UICollectionViewDataSource {
             Challenge(title: "Cake", challengeDescription: "First", createDate: createDate, endDate: endDate, reward: UIImage(named: "cake")!),
             Challenge(title: "Ice Cream", challengeDescription: "Second", createDate: createDate, endDate: endDate, reward: UIImage(named: "icecream")!),
             Challenge(title: "Gift", challengeDescription: "First", createDate: createDate, endDate: endDate, reward: UIImage(named: "gift")!),
-            Challenge(title: "Coffee", challengeDescription: "Second", createDate: createDate, endDate: endDate, reward: UIImage(named: "coffee")!),
+            Challenge(title: "Coffee", challengeDescription: "Second", createDate: createDate, endDate: endDate, reward: UIImage(named: "coffee")!)
         ]
         
         challenges.sort(by: { $0.endDate > $1.createDate })
+    }
+    
+    func getEvent(index: Int) -> Event {
+        return events[index]
+    }
+    
+    func getChallenges() -> [Challenge] {
+        return challenges
+    }
+    
+    func addChallenge(challenge: Challenge) {
+        challenges.append(challenge)
     }
     
     func challengeAtIndexPath(_ indexPath: IndexPath) -> Challenge {
@@ -62,6 +63,11 @@ class Datasource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return challenges.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,9 +85,9 @@ class Datasource: NSObject, UICollectionViewDataSource {
         cell.layer.masksToBounds = true
         
         cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width:3,height: 3)
+        cell.layer.shadowOffset = CGSize(width:1,height: 2)
         cell.layer.shadowRadius = 5
-        cell.layer.shadowOpacity = 1.0
+        cell.layer.shadowOpacity = 0.4
         cell.layer.masksToBounds = false
         return cell
     }

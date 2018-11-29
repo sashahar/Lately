@@ -10,32 +10,26 @@ import UIKit
 
 class Event: NSObject {
     
+    var objectID: Int!
     var title: String!
-    var eventDescription: String!
     var time: String!
-    var timeUntil: NSNumber!
+    var timeUntil: String!
     var location: String!
-    var people: [User] = []
+    var reminder: Bool!
+    var personPic: UIImage!
     
-    init(title: String!, eventDescription: String!, time: String?, location: String!, people: [User] = []) {
+    init(objectID: Int!, title: String!, time: String?, timeUntil: String!, location: String!, reminder: Bool!, personPic: UIImage) {
+        self.objectID = objectID
         self.title = title
-        self.eventDescription = eventDescription
-        self.time = time
+        self.time  = time
+        self.timeUntil = timeUntil
         self.location = location
-        self.people = people
+        self.reminder = reminder
+        self.personPic = personPic
     }
     
-    func addPeople(people: [User] = []) {
-        self.people.append(contentsOf: people)
-    }
-    
-    func addPerson(person: User) {
-        self.people.append(person)
-    }
-    
-    func getTimeUntil() -> String {
-        
-        return ""
+    func setReminder() {
+        reminder = true
     }
 }
 

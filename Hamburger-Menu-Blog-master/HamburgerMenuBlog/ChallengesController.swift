@@ -8,7 +8,12 @@ class ChallengesController: UIViewController {
     @IBOutlet var ubeView: UIView!
     @IBOutlet weak var createButton: UIButton!
     
+    @IBOutlet weak var carolinePic: UIImageView!
+    @IBOutlet weak var sashaPic: UIImageView!
+    @IBOutlet weak var yassPic: UIImageView!
+    
     @IBOutlet weak var header: UIView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var hamburgerMenuIsVisible = false
@@ -26,16 +31,31 @@ class ChallengesController: UIViewController {
             data.addChallenge(challenge: createdChallenge)
         }
         
+        carolinePic.layer.cornerRadius = carolinePic.frame.size.width / 2
+        carolinePic.layer.masksToBounds = true
+        carolinePic.layer.borderWidth = 1
+        carolinePic.layer.borderColor = UIColor.black.cgColor
+        
+        sashaPic.layer.cornerRadius = sashaPic.frame.size.width / 2
+        sashaPic.layer.masksToBounds = true
+        sashaPic.layer.borderWidth = 1
+        sashaPic.layer.borderColor = UIColor.black.cgColor
+        
+        yassPic.layer.cornerRadius = yassPic.frame.size.width / 2
+        yassPic.layer.masksToBounds = true
+        yassPic.layer.borderWidth = 1
+        yassPic.layer.borderColor = UIColor.black.cgColor
+        
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
         imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "AppIcon")
         imageView.image = image
         navigationItem.titleView = imageView
         
-        header.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        header.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
         header.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
         header.layer.shadowOpacity = 1.0
-        header.layer.shadowRadius = 0.0
+        header.layer.shadowRadius = 5
         header.layer.masksToBounds = false
         
         createButton.layer.cornerRadius = 20
@@ -48,7 +68,7 @@ class ChallengesController: UIViewController {
         collectionView.dataSource = data
         collectionView.reloadData()
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //collectionView.deselectItem(at: indexPath, animated: true)
         let selectedChallenge = data.challengeAtIndexPath(indexPath)
@@ -59,7 +79,6 @@ class ChallengesController: UIViewController {
         if segue.identifier == "selectChallenge" {
             if let selectedChallenge = sender as? Challenge, let destinationViewController = segue.destination as? ChallengeDetailedController {
                 destinationViewController.selectedChallenge = selectedChallenge
-                print(selectedChallenge)
             }
         }
         

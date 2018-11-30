@@ -16,18 +16,17 @@ class Challenge: NSObject {
     var endDate: String!
     var daysLeft: NSNumber?
     var reward: UIImage!
+    var people: [Bool] = []
     
-    init(title: String!, challengeDescription: String!, createDate: String!, endDate: String!, reward: UIImage!) {
+    // people: [Caroline, Sasha, Yass]
+    
+    init(title: String!, challengeDescription: String!, createDate: String!, endDate: String!, reward: UIImage!, people: [Bool] = []) {
         self.title = title
         self.challengeDescription = challengeDescription
         self.createDate = createDate
         self.endDate = endDate
         self.reward = reward
-    }
-    
-    func getDaysLeft() -> String {
-        
-        return ""
+        self.people = people
     }
 }
 

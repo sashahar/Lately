@@ -54,13 +54,13 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         imageView.image = image
         navigationItem.titleView = imageView
         
-        header.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05).cgColor
+        header.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
         header.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
         header.layer.shadowOpacity = 1.0
-        header.layer.shadowRadius = 0.0
+        header.layer.shadowRadius = 5
         header.layer.masksToBounds = false
         
-        profilePic.layer.cornerRadius = 45
+        profilePic.layer.cornerRadius = profilePic.frame.size.width / 2
         profilePic.layer.masksToBounds = true
         
         userName.text = "Bryce Johnson"
@@ -76,11 +76,12 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         stack.layer.shadowRadius = 5
         stack.layer.shadowColor = UIColor.black.cgColor
         
-        event1.layer.shadowOffset = .zero
-        event1.layer.shadowOpacity = 0.4
-        event1.layer.shadowRadius = 5
+        event1.layer.backgroundColor = UIColor.white.cgColor
         event1.layer.shadowColor = UIColor.black.cgColor
-        //event1.layer.masksToBounds = false
+        event1.layer.shadowOffset = CGSize(width: 1, height: 2)
+        event1.layer.shadowOpacity = 0.3
+        event1.layer.shadowRadius = 5
+        event1.layer.masksToBounds = false
         
         eventSource1 = data.getEvent(index: 0)
         eventSource2 = data.getEvent(index: 1)
@@ -101,20 +102,19 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
             event2ReminderUnset.isHidden = false
         }
         
+        event2.layer.backgroundColor = UIColor.white.cgColor
         event2.layer.shadowOffset = CGSize(width: 1, height: 2)
-        event2.layer.shadowOpacity = 0.4
+        event2.layer.shadowOpacity = 0.3
         event2.layer.shadowRadius = 5
         event2.layer.shadowColor = UIColor.black.cgColor
         event2.layer.masksToBounds = false
         
         event1.layer.cornerRadius = 10
-        event1.layer.masksToBounds = true
         event1Title.text = eventSource1.title + " in"
         event1TimeUntil.text = "about " + eventSource1.timeUntil
         event1Time.text = eventSource1.time
         
         event2.layer.cornerRadius = 10
-        event2.layer.masksToBounds = true
         event2Title.text = eventSource2.title + " in"
         event2TimeUntil.text = "about " + eventSource2.timeUntil
         event2Time.text = eventSource2.time
@@ -182,7 +182,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         if segue.identifier == "selectChallenge" {
             if let selectedChallenge = sender as? Challenge, let destinationViewController = segue.destination as? ChallengeDetailedController {
                 destinationViewController.selectedChallenge = selectedChallenge
-                print(selectedChallenge)
+                destinationViewController.createdChallenge = createdChallenge
             }
         }
         
@@ -199,6 +199,12 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
                 destinationViewController.event = eventSource2
                 let popupVC = segue.destination as! PopUpController
                 popupVC.delegate = self
+            }
+        }
+        
+        if segue.identifier == "toChallenge" {
+            if let destinationViewController = segue.destination as? ChallengesController {
+                destinationViewController.createdChallenge = createdChallenge
             }
         }
     }

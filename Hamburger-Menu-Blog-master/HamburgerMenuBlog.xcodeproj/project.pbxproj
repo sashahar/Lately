@@ -74,7 +74,6 @@
 		454751BF1F19856F002AC524 /* HamburgerMenuBlog */ = {
 			isa = PBXGroup;
 			children = (
-				5A7560A621AE21A800F859C5 /* ChallengeDetailedController.swift */,
 				454751C01F19856F002AC524 /* AppDelegate.swift */,
 				5AF2731421ABB2C000CF9D0F /* HomeController.swift */,
 				454751C41F19856F002AC524 /* Main.storyboard */,
@@ -84,8 +83,9 @@
 				5A75609E21AD1E8300F859C5 /* Challenge.swift */,
 				5A7560A021AD20D100F859C5 /* Datasource.swift */,
 				5A7560A221AD230600F859C5 /* ImageCollectionViewCell.swift */,
-				5AF2731821ABBAC700CF9D0F /* CreateChallengesController.swift */,
 				5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */,
+				5A7560A621AE21A800F859C5 /* ChallengeDetailedController.swift */,
+				5AF2731821ABBAC700CF9D0F /* CreateChallengesController.swift */,
 				5A85FAB421AA7C0800CA6984 /* PopUpController.swift */,
 				454751C71F19856F002AC524 /* Assets.xcassets */,
 				454751C91F19856F002AC524 /* LaunchScreen.storyboard */,

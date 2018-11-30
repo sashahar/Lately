@@ -35,14 +35,15 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         let d = userCalendar.date(from: dateComponents)
         let endDate = dateFormatter.string(from: d!)
         
+        // people: [Caroline, Sasha, Yass]
+        
         challenges = [
-            Challenge(title: "Cake", challengeDescription: "First", createDate: createDate, endDate: endDate, reward: UIImage(named: "cake")!),
-            Challenge(title: "Ice Cream", challengeDescription: "Second", createDate: createDate, endDate: endDate, reward: UIImage(named: "icecream")!),
-            Challenge(title: "Gift", challengeDescription: "First", createDate: createDate, endDate: endDate, reward: UIImage(named: "gift")!),
-            Challenge(title: "Coffee", challengeDescription: "Second", createDate: createDate, endDate: endDate, reward: UIImage(named: "coffee")!)
+            Challenge(title: "vs. Caroline", challengeDescription: "Be less late", createDate: createDate, endDate: endDate, reward: UIImage(named: "cake"), people: [true, false, false]),
+            Challenge(title: "vs. Dream Team", challengeDescription: "Show up on time", createDate: createDate, endDate: endDate, reward: UIImage(named: "icecream"), people: [true, true, true]),
+            Challenge(title: "vs. Sasha", challengeDescription: "Be first", createDate: createDate, endDate: endDate, reward: UIImage(named: "gift"), people: [false, true, false])
         ]
         
-        challenges.sort(by: { $0.endDate > $1.createDate })
+        //challenges.sort(by: { $0.endDate > $1.createDate })
     }
     
     func getEvent(index: Int) -> Event {
@@ -80,6 +81,7 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         }
         
         cell.titleLabel.text = challenge.title
+        cell.descriptionLabel.text = challenge.challengeDescription
         
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true

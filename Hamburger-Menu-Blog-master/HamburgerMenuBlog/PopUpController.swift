@@ -28,7 +28,7 @@ class PopUpController: UIViewController {
         popUpView.layer.cornerRadius = 15
         popUpView.layer.masksToBounds = true
         
-        personPic.layer.cornerRadius = 45
+        personPic.layer.cornerRadius = personPic.frame.size.width / 2
         personPic.layer.masksToBounds = true
         
         eventTitle.lineBreakMode = .byWordWrapping

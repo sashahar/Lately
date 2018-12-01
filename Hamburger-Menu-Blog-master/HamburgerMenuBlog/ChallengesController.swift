@@ -1,6 +1,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 class ChallengesController: UIViewController {
     
     @IBOutlet var leadingC: NSLayoutConstraint!

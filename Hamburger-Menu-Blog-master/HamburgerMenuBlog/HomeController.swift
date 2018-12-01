@@ -1,7 +1,10 @@
 
 import UIKit
+import UserNotifications
 
-class HomeController: UIViewController, UICollectionViewDelegate, popupControllerDelegate {
+@available(iOS 11.0, *)
+@available(iOS 11.0, *)
+class HomeController: UIViewController, UNUserNotificationCenterDelegate, UICollectionViewDelegate, popupControllerDelegate {
     
     @IBOutlet var leadingC: NSLayoutConstraint!
     @IBOutlet var trailingC: NSLayoutConstraint!
@@ -121,6 +124,10 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         
         collectionView.dataSource = data
         collectionView.reloadData()
+        
+        //Get permission to send push notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+        UNUserNotificationCenter.current().delegate = self
     }
     
     @IBAction func event1ButtonClicked(_ sender: Any) {
@@ -225,6 +232,64 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
         })
+    }
+    
+    @IBAction func sendETA(_ sender: Any) {
+        //Another way to do this is to just schedule
+        //Define custom actions
+        let option1 = UNNotificationAction(identifier: "send", title: "Send", options: UNNotificationActionOptions.foreground)
+        let option2 = UNNotificationAction(identifier: "dictate", title: "Dictate", options: UNNotificationActionOptions.foreground)
+        let option3 = UNNotificationAction(identifier: "cancel", title: "Cancel", options: UNNotificationActionOptions.foreground)
+        
+        //Add to new notification category
+        let category = UNNotificationCategory(identifier: "lateNotification", actions: [option1, option2, option3], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: [])
+        
+        //Add new category to Notification center
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "Late:ly"
+        notificationContent.subtitle = "You're Running Late!"
+        notificationContent.body = "Would you like to send your ETA to Yassy and Bryce?"
+        notificationContent.sound = UNNotificationSound.default
+        notificationContent.categoryIdentifier = "lateNotification"
+        notificationContent.badge = 1
+        
+        //Optional: add an image to your notification
+        //        guard let imagePath = Bundle.main.path(forResource: "Apple", ofType: "png") else {return}
+        //        let url = URL(fileURLWithPath: imagePath)
+        //
+        //        do {
+        //            let attachment = try UNNotificationAttachment(identifier: "message", url: url, options: nil)
+        //
+        //        } catch{
+        //            print("The attachment could not be loaded")
+        //        }
+        
+        let notiTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // Two second delay
+        let request = UNNotificationRequest(identifier: "timer done", content: notificationContent, trigger: notiTrigger)
+        
+        UNUserNotificationCenter.current().add(request){ (error:Error?) in
+            if let error = error{
+                print( "Error: \( error.localizedDescription)")
+            }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.actionIdentifier == "send"{
+            //TODO: Here, figure out how to send a "sent" confirmation
+            
+            print("send")
+        } else if response.actionIdentifier == "dictate" {
+            //TODO: Here, figure out how to navigate to a different UI controller.
+            print("dictate")
+        } else {
+            //Cancel action, do nothing
+            //TODO: Here, figure out how to simply dismiss notification, instead of navigating to challenges
+            print("cancel")
+        }
+        completionHandler()
     }
     
     func setReminder(event: Event) {

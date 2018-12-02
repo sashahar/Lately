@@ -301,7 +301,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = "Late:ly"
         notificationContent.subtitle = "You're Running Late!"
-        notificationContent.body = "Would you like to send your ETA to Yassy and Bryce?"
+        notificationContent.body = "Would you like to send your ETA to Yassy, Sasha and Caroline?"
         notificationContent.sound = UNNotificationSound.default
         notificationContent.categoryIdentifier = "lateNotification"
         notificationContent.badge = 1

@@ -237,9 +237,9 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate, UIColl
     @IBAction func sendETA(_ sender: Any) {
         //Another way to do this is to just schedule
         //Define custom actions
-        let option1 = UNNotificationAction(identifier: "send", title: "Send", options: UNNotificationActionOptions.foreground)
+        let option1 = UNNotificationAction(identifier: "send", title: "Send", options: UNNotificationActionOptions.destructive)
         let option2 = UNNotificationAction(identifier: "dictate", title: "Dictate", options: UNNotificationActionOptions.foreground)
-        let option3 = UNNotificationAction(identifier: "cancel", title: "Cancel", options: UNNotificationActionOptions.foreground)
+        let option3 = UNNotificationAction(identifier: "cancel", title: "Cancel", options: UNNotificationActionOptions.destructive)
         
         //Add to new notification category
         let category = UNNotificationCategory(identifier: "lateNotification", actions: [option1, option2, option3], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: [])
@@ -276,6 +276,12 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate, UIColl
         }
     }
     
+    //this function makes it so that notification will fire even when app is running in the foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+    }
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.actionIdentifier == "send"{
             //TODO: Here, figure out how to send a "sent" confirmation
@@ -283,6 +289,9 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate, UIColl
             print("send")
         } else if response.actionIdentifier == "dictate" {
             //TODO: Here, figure out how to navigate to a different UI controller.
+            //Trigger Segue programatically
+            
+            self.performSegue(withIdentifier: "popupEvent2", sender: self);
             print("dictate")
         } else {
             //Cancel action, do nothing

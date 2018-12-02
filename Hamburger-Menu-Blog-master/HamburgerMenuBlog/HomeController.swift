@@ -32,6 +32,9 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //Send ETA Button
+    @IBOutlet weak var sendETA: UIButton!
+    
     var hamburgerMenuIsVisible = false
     var data: Datasource!
     var eventSource1: Event!
@@ -126,6 +129,14 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
         collectionView.reloadData()
         
         voiceUIFlows = data.getVoices()
+        
+        //Style ETA button
+        sendETA.layer.cornerRadius = 20
+        sendETA.layer.shadowColor = UIColor.black.cgColor
+        sendETA.layer.shadowOffset = CGSize(width: 2, height: 2)
+        sendETA.layer.shadowRadius = 5
+        sendETA.layer.shadowOpacity = 0.5
+        sendETA.layer.masksToBounds = false
         
         //Get permission to send push notifications
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})

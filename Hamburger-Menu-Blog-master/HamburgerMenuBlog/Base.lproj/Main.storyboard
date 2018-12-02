@@ -301,11 +301,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ym3-eD-WgT">
-                                <rect key="frame" x="112" y="768" width="150" height="44"/>
+                                <rect key="frame" x="112" y="747" width="150" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Send ETA">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -353,6 +353,7 @@
                         <outlet property="leadingC" destination="ygX-dp-9ms" id="9RH-Cb-kr9"/>
                         <outlet property="menu" destination="2iI-kF-TLR" id="KHy-En-YFT"/>
                         <outlet property="profilePic" destination="2dm-QG-Khr" id="Zve-wo-Qsq"/>
+                        <outlet property="sendETA" destination="ym3-eD-WgT" id="va8-gb-gKQ"/>
                         <outlet property="stack" destination="i6F-Gj-hI9" id="obm-nI-hKQ"/>
                         <outlet property="trailingC" destination="kpI-UM-coG" id="AUk-ZC-UMX"/>
                         <outlet property="ubeView" destination="uDF-lV-B1w" id="OJW-mN-ROp"/>
@@ -1151,21 +1152,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bryce" width="522" height="357"/>
-        <image name="Caroline" width="147" height="153"/>
-        <image name="Sasha" width="108" height="109"/>
-        <image name="Yasmeen" width="116" height="116"/>
-        <image name="alarm" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="alarmOff" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="cake" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="coffee" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="exit" width="25.600000381469727" height="25.600000381469727"/>
-        <image name="gift" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="hamburger" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="Bryce" width="1044" height="714"/>
+        <image name="Caroline" width="294" height="306"/>
+        <image name="Sasha" width="216" height="218"/>
+        <image name="Yasmeen" width="232" height="232"/>
+        <image name="alarm" width="128" height="128"/>
+        <image name="alarmOff" width="128" height="128"/>
+        <image name="cake" width="128" height="128"/>
+        <image name="coffee" width="128" height="128"/>
+        <image name="exit" width="32" height="32"/>
+        <image name="gift" width="128" height="128"/>
+        <image name="hamburger" width="32" height="32"/>
         <image name="heysiri1" width="252" height="458"/>
-        <image name="icecream" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="streak" width="400.69564819335938" height="400.69564819335938"/>
-        <image name="voice" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="icecream" width="128" height="128"/>
+        <image name="streak" width="128" height="128"/>
+        <image name="voice" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eJl-Gi-8HJ"/>

@@ -575,6 +575,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="voice" id="nIB-Jd-LSb">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="stg-ym-ntX" kind="presentation" identifier="createChallengeWithVoice" id="BtY-kP-dmW"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -586,6 +589,7 @@
                         <outlet property="sashaPic" destination="RlS-RQ-XIa" id="JAr-Sf-6eo"/>
                         <outlet property="trailingC" destination="wGY-TM-ZgK" id="UBv-hy-2Et"/>
                         <outlet property="ubeView" destination="tyH-f1-NyQ" id="Yvl-zO-Uky"/>
+                        <outlet property="voiceButton" destination="nIB-Jd-LSb" id="SUC-gA-B9O"/>
                         <outlet property="yassPic" destination="xg7-tS-XjE" id="wnQ-gp-97d"/>
                         <segue destination="iqo-pA-bnu" kind="popoverPresentation" identifier="selectChallenge" popoverAnchorView="tyH-f1-NyQ" id="lHI-Dg-ErU">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -1152,25 +1156,26 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bryce" width="1044" height="714"/>
-        <image name="Caroline" width="294" height="306"/>
-        <image name="Sasha" width="216" height="218"/>
-        <image name="Yasmeen" width="232" height="232"/>
-        <image name="alarm" width="128" height="128"/>
-        <image name="alarmOff" width="128" height="128"/>
-        <image name="cake" width="128" height="128"/>
-        <image name="coffee" width="128" height="128"/>
-        <image name="exit" width="32" height="32"/>
-        <image name="gift" width="128" height="128"/>
-        <image name="hamburger" width="32" height="32"/>
+        <image name="Bryce" width="522" height="357"/>
+        <image name="Caroline" width="147" height="153"/>
+        <image name="Sasha" width="108" height="109"/>
+        <image name="Yasmeen" width="116" height="116"/>
+        <image name="alarm" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="alarmOff" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="cake" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="coffee" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="exit" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="gift" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="hamburger" width="25.600000381469727" height="25.600000381469727"/>
         <image name="heysiri1" width="252" height="458"/>
-        <image name="icecream" width="128" height="128"/>
-        <image name="streak" width="128" height="128"/>
-        <image name="voice" width="32" height="32"/>
+        <image name="icecream" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="streak" width="400.69564819335938" height="400.69564819335938"/>
+        <image name="voice" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="BtY-kP-dmW"/>
         <segue reference="eJl-Gi-8HJ"/>
-        <segue reference="iSJ-tZ-fzb"/>
+        <segue reference="ZUG-DO-QeJ"/>
         <segue reference="pW7-cy-0qA"/>
         <segue reference="Vm8-Zk-xhp"/>
     </inferredMetricsTieBreakers>

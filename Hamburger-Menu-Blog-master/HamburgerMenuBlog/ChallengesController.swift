@@ -17,16 +17,21 @@ class ChallengesController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var voiceButton: UIBarButtonItem!
+    
     var hamburgerMenuIsVisible = false
     var data: Datasource!
     var createdChallenge: Challenge!
+    var voiceFlows: [VoiceFlow]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if data == nil {
-            data = Datasource();
+            data = Datasource()
         }
+        
+        voiceFlows = data.getVoices()
         
         if createdChallenge != nil {
             data.addChallenge(challenge: createdChallenge)
@@ -86,6 +91,12 @@ class ChallengesController: UIViewController {
         if segue.identifier == "goHome" {
             if let destinationViewController = segue.destination as? HomeController {
                 destinationViewController.createdChallenge = createdChallenge
+            }
+        }
+        
+        if segue.identifier == "createChallengeWithVoice" {
+            if let destinationViewController = segue.destination as? VoiceUI{
+                destinationViewController.UI = voiceFlows[1]
             }
         }
     }

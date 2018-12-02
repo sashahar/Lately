@@ -318,6 +318,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="voice" id="mQp-KP-NFH">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="stg-ym-ntX" kind="presentation" identifier="toVoiceUI" id="gcC-f4-qeu"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -437,7 +440,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyH-f1-NyQ">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmo-R4-9dK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="165"/>
@@ -1029,6 +1032,82 @@
             </objects>
             <point key="canvasLocation" x="2000.8" y="131.78410794602701"/>
         </scene>
+        <!--VoiceUI-->
+        <scene sceneID="Mi0-yQ-8Nd">
+            <objects>
+                <viewController storyboardIdentifier="Voice UI Controller" id="stg-ym-ntX" customClass="VoiceUI" customModule="HamburgerMenuBlog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EWW-mX-fMm"/>
+                        <viewControllerLayoutGuide type="bottom" id="E54-AH-m1j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iY5-bs-dyJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heysiri1" translatesAutoresizingMaskIntoConstraints="NO" id="XaV-x9-9yl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yto-4a-Mzo">
+                                <rect key="frame" x="293" y="39" width="66" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <state key="normal" image="exit"/>
+                                <connections>
+                                    <action selector="exitClicked:" destination="stg-ym-ntX" eventType="touchUpInside" id="tfs-ER-3Ze"/>
+                                    <action selector="exitPopUpClicked:" destination="L0K-bk-Eti" eventType="touchUpInside" id="oUZ-cI-yu1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksl-Qg-N0y">
+                                <rect key="frame" x="21" y="193" width="338" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How can I help you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-IM-fGl">
+                                <rect key="frame" x="33" y="90" width="317" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dbn-WE-ura">
+                                <rect key="frame" x="67" y="258" width="240" height="297"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2j-hD-TYS">
+                                <rect key="frame" x="27" y="667" width="317" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Speak">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="stg-ym-ntX" eventType="touchUpInside" id="CQ5-le-kFL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="exitButton" destination="yto-4a-Mzo" id="WOG-2R-aiT"/>
+                        <outlet property="headerText" destination="Ih7-IM-fGl" id="Arg-Pa-Z2o"/>
+                        <outlet property="inputText" destination="ksl-Qg-N0y" id="CcW-rm-eqg"/>
+                        <outlet property="microphoneButton" destination="i2j-hD-TYS" id="Kpg-A3-ADk"/>
+                        <outlet property="userRequest" destination="dbn-WE-ura" id="cUx-pT-oVs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="moY-Vv-PuX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2892" y="141.87192118226602"/>
+        </scene>
         <!--Back Nav Controller-->
         <scene sceneID="J3Z-T1-8Gg">
             <objects>
@@ -1066,6 +1145,7 @@
         <image name="exit" width="25.600000381469727" height="25.600000381469727"/>
         <image name="gift" width="102.40000152587891" height="102.40000152587891"/>
         <image name="hamburger" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="heysiri1" width="252" height="458"/>
         <image name="icecream" width="102.40000152587891" height="102.40000152587891"/>
         <image name="streak" width="400.69564819335938" height="400.69564819335938"/>
         <image name="voice" width="25.600000381469727" height="25.600000381469727"/>
@@ -1073,7 +1153,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="eJl-Gi-8HJ"/>
         <segue reference="iSJ-tZ-fzb"/>
-        <segue reference="OoQ-Q6-OWO"/>
-        <segue reference="gBT-ff-JNr"/>
+        <segue reference="pW7-cy-0qA"/>
+        <segue reference="azO-lZ-h7t"/>
     </inferredMetricsTieBreakers>
 </document>

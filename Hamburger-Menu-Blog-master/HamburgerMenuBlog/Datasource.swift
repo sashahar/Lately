@@ -12,11 +12,15 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     
     private var challenges: [Challenge] = []
     private var events: [Event] = []
+    private var voices: [VoiceFlow] = []
     
     override init() {
         super.init()
         
         let currentDate = NSDate()
+        
+        voices = [VoiceFlow(objectID: 1, numFlows: 4, prompts: ["How can I help you?", "Here are your events for the day", "Reminder set for 10 minutes before. Would you like me to set a reminder for all social events?", "Reminders for all social events have been set"], suggestions: ["Try asking what events do I have today?", "Try saying set a reminder for lunch with Sasha", "Try saying yes", "Say go home to exit or click the X button"])
+        ]
         
         events = [Event(objectID: 1, title: "Meeting with CS 147 Group", time: "Today @ 11:15 AM", timeUntil: "1.5 hours", location: "@ Huang Basement", reminder: true, personPic: UIImage(named: "Sasha")!, locationPic: UIImage(named: "Huang")!),
                   Event(objectID: 2, title: "Lunch with Sasha", time: "Today @ 1:30 PM", timeUntil: "3 hours", location: "@ Coupa Green", reminder: false, personPic: UIImage(named: "Sasha")!, locationPic: UIImage(named: "CoupaGreen")!)
@@ -44,6 +48,10 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         ]
         
         //challenges.sort(by: { $0.endDate > $1.createDate })
+    }
+    
+    func getVoices() -> [VoiceFlow] {
+        return voices
     }
     
     func getEvent(index: Int) -> Event {

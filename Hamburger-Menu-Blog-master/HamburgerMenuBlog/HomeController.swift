@@ -35,6 +35,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
     var eventSource1: Event!
     var eventSource2: Event!
     var createdChallenge: Challenge!
+    var voiceUIFlows: [VoiceFlow]!
     
     @IBOutlet weak var stack: UIStackView!
     
@@ -121,6 +122,8 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         
         collectionView.dataSource = data
         collectionView.reloadData()
+        
+        voiceUIFlows = data.getVoices()
     }
     
     @IBAction func event1ButtonClicked(_ sender: Any) {
@@ -207,6 +210,18 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
                 destinationViewController.createdChallenge = createdChallenge
             }
         }
+        
+        if segue.identifier == "toVoiceUI"{
+            if let destinationViewController = segue.destination as? VoiceUI {
+                destinationViewController.UI = voiceUIFlows[0]
+                destinationViewController.callback = { message in
+                    print(message)
+                    self.eventSource2.reminder = message
+                    self.event2Reminder.isHidden = false
+                    self.event2ReminderUnset.isHidden = true
+                }
+            }
+        }
     }
     
     @IBAction func hamburgerBtnTapped(_ sender: Any) {
@@ -242,7 +257,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, popupControlle
         if(event.objectID == 2) {
             eventSource2.reminder = event.reminder
             if eventSource2.reminder {
-               event2Reminder.isHidden = false
+                event2Reminder.isHidden = false
                 event2ReminderUnset.isHidden = true
             } else {
                 event2Reminder.isHidden = true

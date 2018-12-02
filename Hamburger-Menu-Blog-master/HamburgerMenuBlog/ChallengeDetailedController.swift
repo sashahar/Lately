@@ -8,7 +8,6 @@
 
 import UIKit
 
-@available(iOS 11.0, *)
 class ChallengeDetailedController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!

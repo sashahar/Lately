@@ -2,7 +2,6 @@
 
 import UIKit
 
-@available(iOS 11.0, *)
 class CreateChallengesController: UIViewController {
 
     @IBOutlet weak var titleField: UITextField!

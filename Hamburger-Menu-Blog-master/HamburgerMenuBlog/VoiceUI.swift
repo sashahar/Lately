@@ -17,6 +17,7 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var userRequest: UITextView!
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var headerText: UILabel!
+    @IBOutlet weak var displayImage: UIImageView!
     
     var textToDisplay: String!
     var UI: VoiceFlow!
@@ -30,6 +31,7 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
     private let speechSynthesizer = AVSpeechSynthesizer()
     
     private var itter: Int = 0
+    private var imageIndex: Int = 0
     
     
     override func viewDidLoad() {
@@ -38,12 +40,18 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
         itter = 0
         inputText.text = UI.suggestions[itter]
         headerText.text = UI.prompts[itter]
+        displayImage.layer.cornerRadius = 15
+        displayImage.layer.masksToBounds = true
+        if(UI.flowNeedsImage[itter]){
+            displayImage.image = UI.images[imageIndex]
+            imageIndex = imageIndex + 1
+        }
 
         
         microphoneButton.layer.cornerRadius = 15
         microphoneButton.layer.masksToBounds = true
         microphoneButton.isEnabled = false
-        microphoneButton.setTitle("Start Recording", for: .normal)
+        microphoneButton.setTitle("Start Speaking", for: .normal)
         
         speechRecognizer.delegate = self
         
@@ -78,31 +86,44 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBAction func exitClicked(_ sender: Any){
         if(UI.objectID == 1){
+            print(itter)
             if(itter >= 2){ //if the iteration is greater than or equal to 2 when exiting it means that a reminder for lunch with sasha has been set
                 callback?(true)
             }else{
                 callback?(false)
             }
         }
-
-
-        dismiss(animated: true, completion: nil)
+        
+        if(!speechSynthesizer.isSpeaking){
+            dismiss(animated: true, completion: nil)
+        }
     }
 
     @IBAction func microphoneTapped(_ sender: Any) {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
+            if(self.userRequest.text.caseInsensitiveCompare("go home") == .orderedSame){
+                exitClicked(self)
+            }
             microphoneButton.isEnabled = false
-            microphoneButton.setTitle("Start Recording", for: .normal)
+            microphoneButton.setTitle("Start Speaking", for: .normal)
             itter = itter + 1
-            inputText.text = UI.suggestions[itter]
-            headerText.text = UI.prompts[itter]
-            speak(itter: itter)
+            if(itter < UI.numFlows){
+                inputText.text = UI.suggestions[itter]
+                headerText.text = UI.prompts[itter]
+                if(UI.flowNeedsImage[itter]){
+                    displayImage.image = UI.images[imageIndex]
+                    imageIndex = imageIndex + 1
+                }else{
+                    displayImage.image = nil;
+                }
+                speak(itter: itter)
+            }
         } else {
             if(!speechSynthesizer.isSpeaking){
                 startRecording()
-                microphoneButton.setTitle("Stop Recording", for: .normal)
+                microphoneButton.setTitle("Stop Speaking", for: .normal)
             }
 
         }

@@ -1072,22 +1072,22 @@
                                     <action selector="exitPopUpClicked:" destination="L0K-bk-Eti" eventType="touchUpInside" id="oUZ-cI-yu1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksl-Qg-N0y">
-                                <rect key="frame" x="21" y="193" width="338" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ksl-Qg-N0y">
+                                <rect key="frame" x="18" y="596" width="338" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How can I help you?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-IM-fGl">
-                                <rect key="frame" x="33" y="90" width="317" height="104"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How can I help you?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Ih7-IM-fGl">
+                                <rect key="frame" x="33" y="94" width="317" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dbn-WE-ura">
-                                <rect key="frame" x="67" y="258" width="240" height="297"/>
+                                <rect key="frame" x="27" y="206" width="323" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1105,10 +1105,15 @@
                                     <action selector="microphoneTapped:" destination="stg-ym-ntX" eventType="touchUpInside" id="CQ5-le-kFL"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXD-UL-p59">
+                                <rect key="frame" x="71" y="267" width="232" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="displayImage" destination="gXD-UL-p59" id="svN-yK-zro"/>
                         <outlet property="exitButton" destination="yto-4a-Mzo" id="WOG-2R-aiT"/>
                         <outlet property="headerText" destination="Ih7-IM-fGl" id="Arg-Pa-Z2o"/>
                         <outlet property="inputText" destination="ksl-Qg-N0y" id="CcW-rm-eqg"/>
@@ -1146,21 +1151,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bryce" width="1044" height="714"/>
-        <image name="Caroline" width="294" height="306"/>
-        <image name="Sasha" width="216" height="218"/>
-        <image name="Yasmeen" width="232" height="232"/>
-        <image name="alarm" width="128" height="128"/>
-        <image name="alarmOff" width="128" height="128"/>
-        <image name="cake" width="128" height="128"/>
-        <image name="coffee" width="128" height="128"/>
-        <image name="exit" width="32" height="32"/>
-        <image name="gift" width="128" height="128"/>
-        <image name="hamburger" width="32" height="32"/>
+        <image name="Bryce" width="522" height="357"/>
+        <image name="Caroline" width="147" height="153"/>
+        <image name="Sasha" width="108" height="109"/>
+        <image name="Yasmeen" width="116" height="116"/>
+        <image name="alarm" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="alarmOff" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="cake" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="coffee" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="exit" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="gift" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="hamburger" width="25.600000381469727" height="25.600000381469727"/>
         <image name="heysiri1" width="252" height="458"/>
-        <image name="icecream" width="128" height="128"/>
-        <image name="streak" width="128" height="128"/>
-        <image name="voice" width="32" height="32"/>
+        <image name="icecream" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="streak" width="400.69564819335938" height="400.69564819335938"/>
+        <image name="voice" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eJl-Gi-8HJ"/>

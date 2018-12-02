@@ -221,10 +221,12 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
             if let destinationViewController = segue.destination as? VoiceUI {
                 destinationViewController.UI = voiceUIFlows[0]
                 destinationViewController.callback = { message in
-                    print(message)
+                    if(message){
+                        self.event2Reminder.isHidden = false
+                        self.event2ReminderUnset.isHidden = true
+                    }
                     self.eventSource2.reminder = message
-                    self.event2Reminder.isHidden = false
-                    self.event2ReminderUnset.isHidden = true
+                   
                 }
             }
         }

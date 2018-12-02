@@ -19,7 +19,7 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         
         let currentDate = NSDate()
         
-        voices = [VoiceFlow(objectID: 1, numFlows: 4, prompts: ["How can I help you?", "Here are your events for the day", "Reminder set for 10 minutes before. Would you like me to set a reminder for all social events?", "Reminders for all social events have been set"], suggestions: ["Try asking what events do I have today?", "Try saying set a reminder for lunch with Sasha", "Try saying yes", "Say go home to exit or click the X button"])
+        voices = [VoiceFlow(objectID: 1, numFlows: 4, prompts: ["How can I help you?", "Here are your events for the day", "Reminder set for 10 minutes before.\nWould you like me to set a reminder for all social events?", "Reminders for all social events have been set."], suggestions: ["(Try asking \"what events do I have today\"?)", "(Try saying \"set a reminder for lunch with Sasha.\")", "(Try saying \"yes\")", "(Say \"go home\" to exit or click the \"X\" button)"], images: [UIImage(named: "TodaysEvents")!, UIImage(named: "SashaReminderSet")!], flowNeedsImage: [false, true, true, false])
         ]
         
         events = [Event(objectID: 1, title: "Meeting with CS 147 Group", time: "Today @ 11:15 AM", timeUntil: "1.5 hours", location: "@ Huang Basement", reminder: true, personPic: UIImage(named: "Sasha")!, locationPic: UIImage(named: "Huang")!),

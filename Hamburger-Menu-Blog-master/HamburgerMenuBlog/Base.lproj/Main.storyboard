@@ -360,6 +360,7 @@
                         <outlet property="userLocation" destination="stA-eY-fvA" id="QdT-hz-yHr"/>
                         <outlet property="userName" destination="pgD-vl-Gl7" id="mML-tm-fCD"/>
                         <segue destination="iqo-pA-bnu" kind="show" identifier="selectChallenge" id="iSJ-tZ-fzb"/>
+                        <segue destination="stg-ym-ntX" kind="presentation" identifier="notificationVoiceUI" id="0yg-yP-a9Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1173,9 +1174,9 @@
         <image name="voice" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BtY-kP-dmW"/>
+        <segue reference="0yg-yP-a9Q"/>
         <segue reference="eJl-Gi-8HJ"/>
-        <segue reference="ZUG-DO-QeJ"/>
+        <segue reference="iSJ-tZ-fzb"/>
         <segue reference="pW7-cy-0qA"/>
         <segue reference="Vm8-Zk-xhp"/>
     </inferredMetricsTieBreakers>

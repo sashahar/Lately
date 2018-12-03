@@ -228,7 +228,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
             }
         }
         
-        if segue.identifier == "toVoiceUI"{
+        if segue.identifier == "toVoiceUI" {
             if let destinationViewController = segue.destination as? VoiceUI {
                 destinationViewController.UI = voiceUIFlows[0]
                 destinationViewController.callback = { message in
@@ -239,6 +239,12 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
                     self.eventSource2.reminder = message
                    
                 }
+            }
+        }
+        
+        if segue.identifier == "notificationVoiceUI" {
+            if let destinationViewController = segue.destination as? VoiceUI {
+                destinationViewController.UI = voiceUIFlows[2]
             }
         }
     }
@@ -340,7 +346,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
             print("send")
         } else if response.actionIdentifier == "dictate" {
             //TODO: Here, figure out how to navigate to a different UI controller.
-            self.performSegue(withIdentifier: "toVoiceUI", sender: self);
+            self.performSegue(withIdentifier: "notificationVoiceUI", sender: self);
             print("dictate")
         } else {
             print("cancel")

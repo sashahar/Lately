@@ -97,6 +97,27 @@ class ChallengesController: UIViewController {
         if segue.identifier == "createChallengeWithVoice" {
             if let destinationViewController = segue.destination as? VoiceUI{
                 destinationViewController.UI = voiceFlows[1]
+                destinationViewController.challengeCallback = { message in
+                    print(message)
+                    if(message){
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateStyle = .medium
+                        
+                        var dateComponents = DateComponents()
+                        dateComponents.year = 2018
+                        dateComponents.month = 12
+                        dateComponents.day = 7
+                        
+                        let userCalendar = Calendar.current // user calendar
+                        let d = userCalendar.date(from: dateComponents)
+                        let endDate = dateFormatter.string(from: d!)
+
+                        self.createdChallenge = Challenge(title: "CS147 Lecture", challengeDescription: "Be on time to CS147 Lecture", createDate: endDate, endDate:endDate, reward: UIImage(named: "cake")!, people: [true, true, false])
+                        self.data.addChallenge(challenge: self.createdChallenge)
+                        self.collectionView.dataSource = self.data
+                        self.collectionView.reloadData()
+                    }
+                }
             }
         }
     }

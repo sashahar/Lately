@@ -22,6 +22,7 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
     var textToDisplay: String!
     var UI: VoiceFlow!
     var callback : ((Bool) -> Void)?
+    var challengeCallback : ((Bool) -> Void)?
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
@@ -92,6 +93,14 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
             }else{
                 callback?(false)
             }
+        }
+
+        if(UI.objectID == 2){
+            if(itter >= 5){
+                challengeCallback?(true)
+            }else{
+                challengeCallback?(false)
+            }            
         }
         
         if(!speechSynthesizer.isSpeaking){

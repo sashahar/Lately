@@ -17,6 +17,7 @@ class ChallengeDetailedController: UIViewController {
     @IBOutlet weak var rewardImage: UIImageView!
     @IBOutlet weak var header: UIView!
     
+    @IBOutlet weak var winnerField: UILabel!
     @IBOutlet weak var carolinePic: UIImageView!
     @IBOutlet weak var sashaPic: UIImageView!
     @IBOutlet weak var yassPic: UIImageView!
@@ -32,6 +33,7 @@ class ChallengeDetailedController: UIViewController {
         
         titleLabel.text = selectedChallenge.title
         descriptionField.text = selectedChallenge.challengeDescription
+        winnerField.text = selectedChallenge.winnerField
         rewardImage.image = selectedChallenge.reward
         
         endDateLabel.text = "Challenge Ends: " + selectedChallenge.endDate

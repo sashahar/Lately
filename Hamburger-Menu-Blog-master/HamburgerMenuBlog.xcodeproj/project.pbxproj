@@ -20,6 +20,7 @@
 		5A7560A721AE21A800F859C5 /* ChallengeDetailedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560A621AE21A800F859C5 /* ChallengeDetailedController.swift */; };
 		5A7560A921AE38F600F859C5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560A821AE38F600F859C5 /* Event.swift */; };
 		5A7560AB21AE390200F859C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7560AA21AE390200F859C5 /* User.swift */; };
+		5A7C3C3521B8D0B300981316 /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C3C3421B8D0B300981316 /* HelpController.swift */; };
 		5A85FAB521AA7C0800CA6984 /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A85FAB421AA7C0800CA6984 /* PopUpController.swift */; };
 		5AF2731521ABB2C000CF9D0F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2731421ABB2C000CF9D0F /* HomeController.swift */; };
 		5AF2731721ABB2E500CF9D0F /* ChallengesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */; };
@@ -42,6 +43,7 @@
 		5A7560A621AE21A800F859C5 /* ChallengeDetailedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailedController.swift; sourceTree = "<group>"; };
 		5A7560A821AE38F600F859C5 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		5A7560AA21AE390200F859C5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5A7C3C3421B8D0B300981316 /* HelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
 		5A85FAB421AA7C0800CA6984 /* PopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		5AF2731421ABB2C000CF9D0F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5AF2731621ABB2E500CF9D0F /* ChallengesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				5AF2731421ABB2C000CF9D0F /* HomeController.swift */,
 				29B72EFD21B2704400E9BD94 /* VoiceUI.swift */,
 				454751C41F19856F002AC524 /* Main.storyboard */,
+				5A7C3C3421B8D0B300981316 /* HelpController.swift */,
 				5A7560A821AE38F600F859C5 /* Event.swift */,
 				29F5FF1C21B35E780084FAA9 /* VoiceFlow.swift */,
 				5A7560AA21AE390200F859C5 /* User.swift */,
@@ -132,7 +135,7 @@
 				TargetAttributes = {
 					454751BC1F19856F002AC524 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = ZG53357D46;
+						DevelopmentTeam = 284CF7BHX4;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF2731921ABBAC700CF9D0F /* CreateChallengesController.swift in Sources */,
+				5A7C3C3521B8D0B300981316 /* HelpController.swift in Sources */,
 				5A7560A921AE38F600F859C5 /* Event.swift in Sources */,
 				5A7560A721AE21A800F859C5 /* ChallengeDetailedController.swift in Sources */,
 				5A85FAB521AA7C0800CA6984 /* PopUpController.swift in Sources */,
@@ -329,10 +333,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = ZG53357D46;
+				DEVELOPMENT_TEAM = 284CF7BHX4;
 				INFOPLIST_FILE = HamburgerMenuBlog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yayitserica.HamburgerMenuBlog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lately.lately;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -345,10 +349,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = ZG53357D46;
+				DEVELOPMENT_TEAM = 284CF7BHX4;
 				INFOPLIST_FILE = HamburgerMenuBlog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yayitserica.HamburgerMenuBlog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lately.lately;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;

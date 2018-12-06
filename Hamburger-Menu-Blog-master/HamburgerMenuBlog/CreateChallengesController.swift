@@ -6,8 +6,9 @@ import UIKit
 class CreateChallengesController: UIViewController {
 
     @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var descriptionField: UITextView!
+    @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var winnerField: UITextField!
     
     @IBOutlet weak var createChallenge: UIButton!
     
@@ -45,9 +46,6 @@ class CreateChallengesController: UIViewController {
         datePicker.addTarget(self, action: #selector(CreateChallengesController.dateChanged(datePicker:)), for: .valueChanged)
         
         dateField.inputView = datePicker
-        
-        descriptionField.clipsToBounds = true
-        descriptionField.layer.cornerRadius = 10
         
         createChallenge.layer.cornerRadius = 20
         createChallenge.layer.shadowColor = UIColor.black.cgColor
@@ -171,6 +169,9 @@ class CreateChallengesController: UIViewController {
     @IBAction func viewTapped(_ sender: Any) {
         datePicker.endEditing(true)
         dateField.endEditing(true)
+        titleField.endEditing(true)
+        descriptionField.endEditing(true)
+        winnerField.endEditing(true)
     }
     
     @objc func dateChanged(datePicker: UIDatePicker) {
@@ -218,7 +219,7 @@ class CreateChallengesController: UIViewController {
         dateFormatter.dateStyle = .medium
         let createDate = dateFormatter.string(from: currentDate as Date)
         print(people)
-        challenge = Challenge(title: titleField.text, challengeDescription: descriptionField.text, createDate: createDate, endDate: dateField.text, reward: rewardImage, people: people)
+        challenge = Challenge(title: titleField.text, challengeDescription: descriptionField.text, createDate: createDate, endDate: dateField.text, winnerField: winnerField.text, reward: rewardImage, people: people)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

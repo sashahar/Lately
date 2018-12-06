@@ -228,6 +228,12 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
             }
         }
         
+        if segue.identifier == "toHelp" {
+            if let destinationViewController = segue.destination as? HelpController {
+                destinationViewController.createdChallenge = createdChallenge
+            }
+        }
+        
         if segue.identifier == "toVoiceUI" {
             if let destinationViewController = segue.destination as? VoiceUI {
                 destinationViewController.UI = voiceUIFlows[0]
@@ -306,7 +312,7 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
         
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = "Late:ly"
-        notificationContent.subtitle = "You're Running Late!"
+        notificationContent.subtitle = "Running Late to Meet with CS 147 Group!"
         notificationContent.body = "Would you like to send your ETA to Yassy, Sasha and Caroline?"
         notificationContent.sound = UNNotificationSound.default
         notificationContent.categoryIdentifier = "lateNotification"

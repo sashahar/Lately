@@ -14,17 +14,18 @@ class Challenge: NSObject {
     var challengeDescription: String!
     var createDate: String!
     var endDate: String!
-    var daysLeft: NSNumber?
+    var winnerField: String!
     var reward: UIImage!
     var people: [Bool] = []
     
     // people: [Caroline, Sasha, Yass]
     
-    init(title: String!, challengeDescription: String!, createDate: String!, endDate: String!, reward: UIImage!, people: [Bool] = []) {
+    init(title: String!, challengeDescription: String!, createDate: String!, endDate: String!, winnerField: String!, reward: UIImage!, people: [Bool] = []) {
         self.title = title
         self.challengeDescription = challengeDescription
         self.createDate = createDate
         self.endDate = endDate
+        self.winnerField = winnerField
         self.reward = reward
         self.people = people
     }

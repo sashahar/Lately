@@ -44,12 +44,11 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         // people: [Caroline, Sasha, Yass]
         
         challenges = [
-            Challenge(title: "vs. Caroline", challengeDescription: "Be less late", createDate: createDate, endDate: endDate, reward: UIImage(named: "cake"), people: [true, false, false]),
-            Challenge(title: "vs. Dream Team", challengeDescription: "Show up on time", createDate: createDate, endDate: endDate, reward: UIImage(named: "icecream"), people: [true, true, true]),
-            Challenge(title: "vs. Sasha", challengeDescription: "Be first", createDate: createDate, endDate: endDate, reward: UIImage(named: "gift"), people: [false, true, false])
+            Challenge(title: "vs. Caroline", challengeDescription: "Be less late", createDate: createDate, endDate: endDate, winnerField: "is the least late 3 times", reward: UIImage(named: "cake"), people: [true, false, false]),
+            Challenge(title: "vs. Dream Team", challengeDescription: "Show up on time", createDate: createDate, endDate: endDate, winnerField: "is on time for 5 lectures", reward: UIImage(named: "icecream"), people: [true, true, true]),
+            Challenge(title: "vs. Sasha", challengeDescription: "Be first", createDate: createDate, endDate: endDate, winnerField: "gets there first 2 times", reward: UIImage(named: "gift"), people: [false, true, false]),
+            Challenge(title: "vs. Yass", challengeDescription: "Don't be late", createDate: createDate, endDate: endDate, winnerField: "gets there first 2 times", reward: UIImage(named: "coffee"), people: [false, false, true])
         ]
-        
-        //challenges.sort(by: { $0.endDate > $1.createDate })
     }
     
     func getVoices() -> [VoiceFlow] {
@@ -66,6 +65,7 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
     
     func addChallenge(challenge: Challenge) {
         challenges.append(challenge)
+        challenges.reverse()
     }
     
     func challengeAtIndexPath(_ indexPath: IndexPath) -> Challenge {

@@ -19,6 +19,7 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var headerText: UILabel!
     @IBOutlet weak var displayImage: UIImageView!
+    @IBOutlet weak var speakButton: UIButton!
     
     var textToDisplay: String!
     var UI: VoiceFlow!
@@ -49,7 +50,7 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
             imageIndex = imageIndex + 1
         }
 
-        
+        speakButton.layer.cornerRadius = 20
         microphoneButton.layer.cornerRadius = 15
         microphoneButton.layer.masksToBounds = true
         microphoneButton.isEnabled = false

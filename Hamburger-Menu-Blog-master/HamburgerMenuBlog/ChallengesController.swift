@@ -94,6 +94,12 @@ class ChallengesController: UIViewController {
             }
         }
         
+        if segue.identifier == "toHelp" {
+            if let destinationViewController = segue.destination as? HelpController {
+                destinationViewController.createdChallenge = createdChallenge
+            }
+        }
+        
         if segue.identifier == "createChallengeWithVoice" {
             if let destinationViewController = segue.destination as? VoiceUI{
                 destinationViewController.UI = voiceFlows[1]
@@ -112,7 +118,7 @@ class ChallengesController: UIViewController {
                         let d = userCalendar.date(from: dateComponents)
                         let endDate = dateFormatter.string(from: d!)
 
-                        self.createdChallenge = Challenge(title: "CS147 Lecture", challengeDescription: "Be on time to CS147 Lecture", createDate: endDate, endDate:endDate, reward: UIImage(named: "cake")!, people: [true, true, false])
+                        self.createdChallenge = Challenge(title: "CS147 Lecture", challengeDescription: "Be on time to CS147 Lecture", createDate: endDate, endDate:endDate, winnerField: "whoever is on time the most", reward: UIImage(named: "cake")!, people: [true, true, false])
                         self.data.addChallenge(challenge: self.createdChallenge)
                         self.collectionView.dataSource = self.data
                         self.collectionView.reloadData()

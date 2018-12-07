@@ -81,6 +81,5 @@ class PopUpController: UIViewController {
         }
         
         dismiss(animated: true, completion: nil)
-        
     }
 }

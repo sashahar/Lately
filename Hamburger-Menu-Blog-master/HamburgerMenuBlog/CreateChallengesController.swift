@@ -219,7 +219,7 @@ class CreateChallengesController: UIViewController {
         dateFormatter.dateStyle = .medium
         let createDate = dateFormatter.string(from: currentDate as Date)
         print(people)
-        challenge = Challenge(title: titleField.text, challengeDescription: descriptionField.text, createDate: createDate, endDate: dateField.text, winnerField: winnerField.text, reward: rewardImage, people: people)
+        challenge = Challenge(title: titleField.text, challengeDescription: descriptionField.text, createDate: createDate, endDate: dateField.text, winnerField: winnerField.text, reward: rewardImage, people: people, notification: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

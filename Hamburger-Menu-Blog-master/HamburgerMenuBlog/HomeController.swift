@@ -195,16 +195,21 @@ class HomeController: UIViewController, UICollectionViewDelegate, UNUserNotifica
         //collectionView.deselectItem(at: indexPath, animated: true)
         
         let selectedChallenge = data.challengeAtIndexPath(indexPath)
-        performSegue(withIdentifier: "selectChallenge", sender: selectedChallenge)
+        
+        if selectedChallenge.notification == true {
+            performSegue(withIdentifier: "toFinish", sender: self)
+        } else {
+            performSegue(withIdentifier: "selectChallenge", sender: selectedChallenge)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectChallenge" {
             if let selectedChallenge = sender as? Challenge, let destinationViewController = segue.destination as? ChallengeDetailedController {
-                destinationViewController.selectedChallenge = selectedChallenge
-                destinationViewController.createdChallenge = createdChallenge
+                    destinationViewController.selectedChallenge = selectedChallenge
+                    destinationViewController.createdChallenge = createdChallenge
+                }
             }
-        }
         
         if segue.identifier == "popupEvent1" {
             if let destinationViewController = segue.destination as? PopUpController {

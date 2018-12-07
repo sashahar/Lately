@@ -44,10 +44,10 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         // people: [Caroline, Sasha, Yass]
         
         challenges = [
-            Challenge(title: "vs. Caroline", challengeDescription: "Be less late", createDate: createDate, endDate: endDate, winnerField: "is the least late 3 times", reward: UIImage(named: "cake"), people: [true, false, false]),
-            Challenge(title: "vs. Dream Team", challengeDescription: "Show up on time", createDate: createDate, endDate: endDate, winnerField: "is on time for 5 lectures", reward: UIImage(named: "icecream"), people: [true, true, true]),
-            Challenge(title: "vs. Sasha", challengeDescription: "Be first", createDate: createDate, endDate: endDate, winnerField: "gets there first 2 times", reward: UIImage(named: "gift"), people: [false, true, false]),
-            Challenge(title: "vs. Yass", challengeDescription: "Don't be late", createDate: createDate, endDate: endDate, winnerField: "gets there first 2 times", reward: UIImage(named: "coffee"), people: [false, false, true])
+            Challenge(title: "vs. Caroline", challengeDescription: "Be less late", createDate: createDate, endDate: endDate, winnerField: "is the least late 3 times", reward: UIImage(named: "cake"), people: [true, false, false], notification: true),
+            Challenge(title: "vs. Dream Team", challengeDescription: "Show up on time", createDate: createDate, endDate: endDate, winnerField: "is on time for 5 lectures", reward: UIImage(named: "icecream"), people: [true, true, true], notification: false),
+            Challenge(title: "vs. Sasha", challengeDescription: "Be first", createDate: createDate, endDate: endDate, winnerField: "gets there first 2 times", reward: UIImage(named: "gift"), people: [false, true, false], notification: false),
+            Challenge(title: "vs. Yass", challengeDescription: "Don't be late", createDate: createDate, endDate: endDate, winnerField: "gets there first 2 times", reward: UIImage(named: "coffee"), people: [false, false, true], notification: false)
         ]
     }
     
@@ -88,6 +88,12 @@ class Datasource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
         if let myImage = challenge.reward {
             
             cell.imageView.image = myImage
+        }
+        
+        if challenge.notification {
+            cell.notification.isHidden = false
+        } else {
+            cell.notification.isHidden = true
         }
         
         cell.titleLabel.text = challenge.title

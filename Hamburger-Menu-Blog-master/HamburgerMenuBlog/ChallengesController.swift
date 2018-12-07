@@ -117,7 +117,7 @@ class ChallengesController: UIViewController {
                         let d = userCalendar.date(from: dateComponents)
                         let endDate = dateFormatter.string(from: d!)
 
-                        self.createdChallenge = Challenge(title: "CS147 Lecture", challengeDescription: "Be on time to CS147 Lecture", createDate: endDate, endDate:endDate, winnerField: "whoever is on time the most", reward: UIImage(named: "cake")!, people: [true, true, false], notification: false)
+                        self.createdChallenge = Challenge(title: "CS147 Section", challengeDescription: "Be on time to CS147 Section", createDate: endDate, endDate:endDate, winnerField: "whoever is on time the most", reward: UIImage(named: "cake")!, people: [true, true, false], notification: false)
                         self.data.addChallenge(challenge: self.createdChallenge)
                         self.collectionView.dataSource = self.data
                         self.collectionView.reloadData()

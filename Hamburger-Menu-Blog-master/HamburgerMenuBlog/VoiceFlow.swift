@@ -1,11 +1,3 @@
-//
-//  VoiceFlow.swift
-//  HamburgerMenuBlog
-//
-//  Created by Caroline Braviak on 12/1/18.
-//  Copyright © 2018 Erica Millado. All rights reserved.
-//
-
 import UIKit
 
 class VoiceFlow: NSObject {

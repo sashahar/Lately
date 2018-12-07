@@ -1,12 +1,3 @@
-//
-//  VoiceUI.swift
-//  Taken and Adapted from the Appcoda Speech to Text Demo on github
-//  Link to Appcoda git repo: https://github.com/appcoda/SpeechToTextDemo
-//
-//  Created by Caroline Braviak on 11/30/18.
-//  Copyright © 2018 Erica Millado. All rights reserved.
-//
-
 import UIKit
 import Speech
 import AVFoundation

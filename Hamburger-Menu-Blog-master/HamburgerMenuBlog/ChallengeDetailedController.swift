@@ -1,11 +1,3 @@
-//
-//  DetailViewController.swift
-//  GridLayout
-//
-//  Created by Sztanyi Szabolcs on 2017. 04. 05..
-//  Copyright © 2017. Sabminder. All rights reserved.
-//
-
 import UIKit
 
 @available(iOS 11.0, *)

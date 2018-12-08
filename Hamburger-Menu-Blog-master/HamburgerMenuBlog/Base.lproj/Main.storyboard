@@ -838,8 +838,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Winner Is Whoever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SB-fS-jnI">
-                                <rect key="frame" x="95" y="384" width="179" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Winner Is Whoever..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SB-fS-jnI">
+                                <rect key="frame" x="89" y="384" width="191" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1575,7 +1575,7 @@
         <segue reference="BtY-kP-dmW"/>
         <segue reference="eJl-Gi-8HJ"/>
         <segue reference="ZUG-DO-QeJ"/>
-        <segue reference="pW7-cy-0qA"/>
-        <segue reference="Vm8-Zk-xhp"/>
+        <segue reference="bII-q8-VQA"/>
+        <segue reference="pGV-po-7T6"/>
     </inferredMetricsTieBreakers>
 </document>

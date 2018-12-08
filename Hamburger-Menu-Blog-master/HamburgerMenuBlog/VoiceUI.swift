@@ -114,7 +114,7 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
             if(itter < UI.numFlows){
                 inputText.text = UI.suggestions[itter]
                 headerText.text = UI.prompts[itter]
-                if(UI.flowNeedsImage[itter]){
+                if(UI.flowNeedsImage[itter]) {
                     displayImage.image = UI.images[imageIndex]
                     imageIndex = imageIndex + 1
                 }else{
@@ -127,7 +127,6 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
                 startRecording()
                 microphoneButton.setTitle("Stop Speaking", for: .normal)
             }
-
         }
     }
     
@@ -150,7 +149,7 @@ class VoiceUI: UIViewController, SFSpeechRecognizerDelegate {
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
-            try audioSession.setCategory(.record, mode: .default)
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .defaultToSpeaker)
             try audioSession.setMode(AVAudioSession.Mode.measurement)
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         } catch {
